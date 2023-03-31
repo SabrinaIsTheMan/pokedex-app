@@ -2,11 +2,8 @@ html {
   background-color: #222;
   background-image: url('../../../assets/background1.jpg');
   font-size: 125%; // 20px
-  // overflow-x: hidden; // prevent horizontal scrolling, even on mobile device rotated horizontally
-}
-
-body {
-  overflow-x: hidden;
+  overflow: hidden; // prevent horizontal scrolling, even on mobile device rotated horizontally
+  background-size: cover;
 }
 
 .wrapper {
@@ -23,11 +20,8 @@ li {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: 0.5s;
-
 }
 
 img {
@@ -37,15 +31,3 @@ img {
   /* removes extra padding at bottom of images */
   height: auto;
 }
-
-// .button {
-//   border: 0;
-//   align-self: center;
-//   padding: 0.5em 1em;
-//   border-radius: 15px;
-//   cursor: pointer;
-// }
-
-// button {
-//   border: none;
-// }
