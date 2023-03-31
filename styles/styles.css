@@ -1,5 +1,16 @@
-.gameboy {
-  background-color: #b9b9b9;
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .gameBoy {
+  background-color: #fbf3d7;
   height: 1000px;
   width: 700px;
   border-radius: 20px;
@@ -18,17 +29,62 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.gameboy .screen {
-  background-color: rgb(103, 103, 103);
-  width: 600px;
-  height: 400px;
+.container .gameBoy .screen {
+  background-color: rgb(169, 168, 163);
+  width: 90%;
+  height: 50%;
+  margin-top: 40px;
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
-.gameboy .controls {
+.container .gameBoy .screen .display {
+  width: 90%;
+  height: 90%;
   outline: 2px solid #000;
-  width: 300px;
-  height: 300px;
+  background-color: #f0f3a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container .gameBoy .screen .display .leftScreen,
+.container .gameBoy .screen .display .rightScreen {
+  outline: 2px solid #000;
+  width: 50%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .gameBoy .screen .display .leftScreen .stats,
+.container .gameBoy .screen .display .rightScreen .stats {
+  width: 80%;
+  height: 50%;
+  border: 2px solid #000;
+  border-radius: 10px;
+  -webkit-box-shadow: 15px 15px 0px -5px #000000;
+          box-shadow: 15px 15px 0px -5px #000000;
+}
+.container .gameBoy .screen .display .leftScreen .pokemonSprite,
+.container .gameBoy .screen .display .rightScreen .pokemonSprite {
+  width: 80%;
+  height: 50%;
+  outline: 2px solid #000;
+}
+.container .gameBoy .controls {
+  width: 100%;
+  height: 50%;
 }
