@@ -223,7 +223,7 @@ template {
 
 html {
   background-color: #222;
-  background-image: url("../../../assets/background1.jpg");
+  background-image: url("../assets/background1.jpg");
   font-size: 125%;
   overflow: hidden;
   background-size: cover;
@@ -346,9 +346,6 @@ header h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -394,7 +391,7 @@ header h2 {
 }
 .container .gameBoy .screen .display .leftScreen .stats,
 .container .gameBoy .screen .display .rightScreen .stats {
-  width: 80%;
+  width: 90%;
   height: 50%;
   border: 2px solid #000;
   border-radius: 10px;
@@ -411,7 +408,7 @@ header h2 {
       -ms-flex-pack: center;
           justify-content: center;
   text-transform: uppercase;
-  padding-left: 10%;
+  padding-left: 5%;
 }
 .container .gameBoy .screen .display .leftScreen .pokemonSprite,
 .container .gameBoy .screen .display .rightScreen .pokemonSprite {
@@ -435,12 +432,13 @@ header h2 {
 
 .consoleTitle {
   padding: 1%;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  padding-left: 30px;
+  padding-left: 6%;
+  width: 100%;
+  justify-self: flex-start;
 }
 .consoleTitle .consoleName {
   font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .lowerHalf {
@@ -515,7 +513,6 @@ header h2 {
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  background: rgb(236, 152, 152);
   background: linear-gradient(315deg, rgb(236, 152, 152) 0%, rgb(255, 0, 0) 38%);
   -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
           box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
@@ -528,4 +525,6 @@ header h2 {
   border: 0;
   color: rgb(74, 74, 74);
   font-size: 1.5rem;
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
 }

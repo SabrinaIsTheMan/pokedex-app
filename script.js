@@ -57,6 +57,21 @@ app.clickRandom = () => {
    app.getPokemon();
 };
 
+// keydown events
+app.keyEvents = () => {
+   document.addEventListener('keydown', function (event) {
+      if (event.code === 'ArrowRight') { // right key
+         app.clickNext();
+      }
+      else if (event.code === 'ArrowLeft') { // left key
+         app.clickPrevious();
+      }
+      else if (event.code === 'KeyA' || event.code === 'KeyB') { // A or B button
+         app.clickRandom();
+      }
+   });
+}
+
 app.init = () => {
    app.pokeName = document.getElementById('name');
    app.pokeHeight = document.getElementById('height');
@@ -64,15 +79,22 @@ app.init = () => {
    app.pokeType = document.getElementById('type'); // array
    app.pokeSprite = document.getElementById('sprite'); // png
 
-   app.btnRight = document.getElementById('btnRight'); // next
-   app.btnLeft = document.getElementById('btnLeft'); // previous
+   app.btnRight = document.getElementById('btnRight'); // right button
+   app.btnLeft = document.getElementById('btnLeft'); // left button
    app.btnA = document.getElementById('btnA'); // A button
    app.btnB = document.getElementById('btnB'); // B button
 
+   // disable up and down buttons
+   app.btnUp = document.getElementById('btnUp').disabled = true;
+   app.btnDown = document.getElementById('btnDown').disabled = true;
+
+   // click events
    app.btnRight.addEventListener('click', app.clickNext);
    app.btnLeft.addEventListener('click', app.clickPrevious);
    app.btnA.addEventListener('click', app.clickRandom);
    app.btnB.addEventListener('click', app.clickRandom);
+
+   app.keyEvents();
 
    app.getPokemon();
 }
