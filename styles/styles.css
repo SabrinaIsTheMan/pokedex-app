@@ -254,24 +254,6 @@ img {
   height: auto;
 }
 
-.btnCircle {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: rgb(125, 13, 55);
-  background: radial-gradient(circle, rgb(125, 13, 55) 41%, rgb(187, 63, 111) 100%);
-  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
-          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
-}
-
-.btnSquare {
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  color: rgb(74, 74, 74);
-  font-size: 1rem;
-}
-
 @font-face {
   font-family: "Gill Bold I";
   src: url("../../../font/Gill Sans Bold Italic.otf");
@@ -309,23 +291,25 @@ h1 {
   font-family: "PokemonSolid";
   -webkit-text-stroke: 3px #165DAD;
   -webkit-text-fill-color: #FFCC01;
-  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  font-size: 3rem;
   letter-spacing: 5px;
+  text-align: center;
 }
 
 h2,
-h3 {
+h3,
+h4 {
   font-family: "VT323", monospace;
   letter-spacing: 3px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 h3 {
-  font-size: 1.1rem;
-  line-height: 30px;
+  font-size: 0.9rem;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -333,21 +317,24 @@ p,
 select {
   font-family: "VT323", monospace;
   color: #4A3F89;
+  font-size: 0.75rem;
 }
 
 .button {
   font-family: "Brand";
 }
 
-header h3 {
+header h4 {
   color: white;
+  line-height: 0rem;
+  font-size: 80%;
 }
 
 .consoleTitle {
   padding-top: 20px;
   -ms-flex-item-align: start;
       align-self: flex-start;
-  padding-left: 30px;
+  padding-left: 35px;
   height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -377,7 +364,7 @@ header h3 {
 
 header {
   background-color: rgba(0, 0, 0, 0.5);
-  height: 15vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -391,10 +378,17 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 1%;
+  text-align: center;
 }
-header h2 {
-  color: white;
+header span {
+  border: white solid 2px;
+  border-radius: 50%;
+}
+header .instructionBtn {
+  padding: 2px 5px 2px 8px;
+}
+header .instructionArrows {
+  padding: 5px 5px 5px 8px;
 }
 
 .container {
@@ -407,15 +401,17 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80vh;
+  height: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .container .gameBoy {
   background: rgb(218, 213, 210);
   background: -webkit-gradient(linear, right top, left top, from(rgb(218, 213, 210)), color-stop(2%, rgb(255, 255, 255)), color-stop(3%, rgb(218, 213, 210)), color-stop(97%, rgb(218, 213, 210)), color-stop(99%, rgb(255, 255, 255)), to(rgb(218, 213, 210)));
   background: linear-gradient(270deg, rgb(218, 213, 210) 0%, rgb(255, 255, 255) 2%, rgb(218, 213, 210) 3%, rgb(218, 213, 210) 97%, rgb(255, 255, 255) 99%, rgb(218, 213, 210) 100%);
-  height: 90%;
-  min-height: 722px;
-  width: 560px;
+  height: auto;
+  min-height: 72vh;
+  width: 30vw;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,13 +423,12 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 25px;
 }
 .container .gameBoy .screen {
   background-color: #39363D;
-  width: 90%;
-  height: 50%;
-  margin-top: 40px;
+  width: 85%;
+  height: 35%;
+  margin-top: 20px;
   border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -444,29 +439,36 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 10px;
 }
 .container .gameBoy .screen .battery {
-  background-color: rgb(255, 0, 68);
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-right: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  margin-left: 3%;
+}
+.container .gameBoy .screen .battery .batteryLight {
+  background-color: rgb(255, 0, 68);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 .container .gameBoy .screen .battery p {
   color: #DAD5D2;
-  font-size: 0.6rem;
-  position: relative;
-  bottom: -10px;
-  left: -12px;
+  font-size: 0.5rem;
 }
 .container .gameBoy .screen .display {
-  width: 85%;
-  height: 85%;
-  padding: 2%;
+  width: 90%;
+  height: 80%;
+  margin: 4%;
+  padding: 1%;
   background-color: #6E8503;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -475,7 +477,6 @@ header h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: auto;
 }
 .container .gameBoy .screen .display .topDisplay h2 {
   text-align: center;
@@ -506,9 +507,7 @@ header h2 {
 .container .gameBoy .screen .display .middleDisplay .leftScreen .stats,
 .container .gameBoy .screen .display .middleDisplay .rightScreen .stats {
   width: 100%;
-  height: 90%;
-  min-height: 147px;
-  min-width: 147px;
+  height: auto;
   border: 2px solid #000;
   border-radius: 10px;
   -webkit-box-shadow: 10px 10px 0px -5px #000000;
@@ -521,12 +520,12 @@ header h2 {
       -ms-flex-direction: column;
           flex-direction: column;
   text-transform: uppercase;
-  padding: 2%;
+  padding: 5%;
 }
 .container .gameBoy .screen .display .middleDisplay .leftScreen .pokemonSprite,
 .container .gameBoy .screen .display .middleDisplay .rightScreen .pokemonSprite {
-  width: 80%;
-  height: 50%;
+  width: 100%;
+  height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -550,11 +549,11 @@ header h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 50px;
+  padding-top: 25px;
 }
 .lowerHalf .dPad {
   width: auto;
-  height: 150px;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,8 +600,8 @@ header h2 {
   text-align: right;
 }
 .lowerHalf .dPad .btnMiddle .btnCicMid {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   background: rgb(75, 75, 75);
   background: linear-gradient(315deg, rgb(75, 75, 75) 0%, rgb(0, 0, 0) 38%);
   border: 0;
@@ -610,8 +609,8 @@ header h2 {
   border-radius: 50%;
 }
 .lowerHalf .buttons {
-  width: 145px;
-  height: 145px;
+  width: 140px;
+  height: 125px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -627,8 +626,8 @@ header h2 {
 }
 .lowerHalf .buttons .btnLeft .btnLabel {
   position: absolute;
-  bottom: -30px;
-  left: 55px;
+  bottom: -20px;
+  left: 50px;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
   font-family: "Gill Bold";
@@ -638,22 +637,40 @@ header h2 {
 }
 .lowerHalf .buttons .btnRight .btnLabel {
   position: absolute;
-  bottom: -30px;
-  left: 55px;
+  bottom: -20px;
+  left: 50px;
   -webkit-transform: rotate(-30deg);
           transform: rotate(-30deg);
   font-family: "Gill Bold";
 }
 
+.btnCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(125, 13, 55);
+  background: radial-gradient(circle, rgb(125, 13, 55) 41%, rgb(187, 63, 111) 100%);
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+}
+
+.btnSquare {
+  width: 45px;
+  height: 45px;
+  background-color: black;
+  color: rgb(74, 74, 74);
+  font-size: 1rem;
+}
+
 .bottomSection {
   width: 90%;
-  height: 300px;
+  height: 140px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 .bottomSection .optionButtons {
-  height: 150px;
+  height: 80px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -666,12 +683,12 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-right: 100px;
-  gap: 20px;
+  padding-right: 70px;
+  gap: 25px;
 }
 .bottomSection .optionButtons .optBtn {
-  width: 70px;
-  height: 15px;
+  width: 40px;
+  height: 10px;
   background: rgb(85, 85, 85);
   background: -webkit-gradient(linear, left bottom, left top, from(rgb(85, 85, 85)), color-stop(0%, rgb(85, 85, 85)), color-stop(19%, rgb(131, 131, 131)), color-stop(28%, rgb(85, 85, 85)), color-stop(76%, rgb(85, 85, 85)), color-stop(85%, rgb(131, 131, 131)), to(rgb(85, 85, 85)));
   background: linear-gradient(0deg, rgb(85, 85, 85) 0%, rgb(85, 85, 85) 0%, rgb(131, 131, 131) 19%, rgb(85, 85, 85) 28%, rgb(85, 85, 85) 76%, rgb(131, 131, 131) 85%, rgb(85, 85, 85) 100%);
@@ -686,11 +703,10 @@ header h2 {
   text-align: center;
   width: 100%;
   font-family: "Brand";
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   letter-spacing: 2px;
 }
 .bottomSection .speaker {
-  padding-bottom: 40px;
   -ms-flex-item-align: end;
       align-self: flex-end;
   display: -webkit-box;
@@ -705,7 +721,7 @@ header h2 {
 }
 .bottomSection .speaker .speakerHole {
   width: 10px;
-  height: 100px;
+  height: 80px;
   background: rgb(162, 159, 157);
   border-left: 2px solid #000;
   border-radius: 5px;
@@ -733,55 +749,88 @@ header h2 {
   height: 25px;
   background-color: #993058;
   font-size: 0.5rem;
+  padding: 0 1%;
+  margin: 0 2%;
+}
+
+footer,
+main:after {
+  height: auto;
 }
 
 footer {
-  height: 5vh;
   background-color: #000;
-  position: relative;
-  bottom: 0;
+  text-align: center;
+}
+footer p {
+  color: #fff;
 }
 
-/************
+/* =======================
 MEDIA QUERIES
-*************/
+======================= */
+@media (max-width: 768px) {
+  .container .gameBoy {
+    width: 80vw;
+  }
+}
 @media (max-width: 480px) {
+  .container .gameBoy {
+    min-height: 70vh;
+  }
   .btnCircle {
-    width: 45px;
-    height: 45px;
-  }
-  .btnSquare {
-    width: 40px;
-    height: 40px;
-  }
-  .lowerHalf .dPad {
-    width: 120px;
-    height: 120px;
-  }
-  .lowerHalf .dPad .btnMiddle .btnCicMid {
     width: 30px;
     height: 30px;
   }
+  .btnSquare {
+    width: 30px;
+    height: 30px;
+  }
+  .lowerHalf .dPad {
+    width: 90px;
+    height: 90px;
+  }
+  .lowerHalf .dPad .btnMiddle .btnCicMid {
+    width: 25px;
+    height: 25px;
+  }
   .lowerHalf .buttons {
-    width: 100px;
-    margin-left: 15px;
+    width: 80px;
+    margin-right: 20px;
   }
   .lowerHalf .buttons .btnLeft .btnLabel,
   .lowerHalf .buttons .btnRight .btnLabel {
     left: 40px;
   }
   .bottomSection .optionButtons {
-    padding-right: 0;
+    height: 10%;
+    padding-left: 50px;
   }
   .bottomSection .optionButtons .optBtn {
-    width: 50px;
-    height: 10px;
+    width: 30px;
+    height: 5px;
   }
   .bottomSection .speaker {
     gap: 7px;
-    padding-right: 10px;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin-left: -20vw;
   }
   .bottomSection .speaker .speakerHole {
     height: 70px;
+  }
+}
+@media (max-width: 320px) {
+  h4 {
+    font-size: 80%;
+  }
+  h2 {
+    font-size: 0.75rem;
+  }
+  p {
+    font-size: 0.6rem;
+  }
+  .container .gameBoy {
+    width: 90vw;
   }
 }

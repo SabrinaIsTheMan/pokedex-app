@@ -3,58 +3,90 @@ MEDIA QUERIES
 ======================= */
   
   
+@media (max-width: 768px) {
+
+  .container .gameBoy {
+    width: 80vw;
+  }
+}
+
 @media (max-width: 480px) {
-  
+
+  .container .gameBoy {
+    min-height: 70vh;
+  }
+
   .btnCircle {
-    width: 45px;
-    height: 45px;
-  }
+      width: 30px;
+      height: 30px;
+    }
   
-  .btnSquare {
-    width: 40px;
-    height: 40px;
-  }
-
-  .lowerHalf {
-    .dPad {
-      width: 120px;
-      height: 120px;
-
-      .btnMiddle .btnCicMid {
-        width: 30px;
-        height: 30px;
-      }
+    .btnSquare {
+      width: 30px;
+      height: 30px;
     }
-
-    .buttons {
-      width: 100px;
-      margin-left: 15px;
-
-      .btnLeft .btnLabel,
-      .btnRight .btnLabel {
-        left: 40px; 
-      }
-    }
-  }
   
-  .bottomSection {
-    .optionButtons {
-      padding-right: 0;
-
-      .optBtn {
-        width: 50px;
-        height: 10px;
+    .lowerHalf {
+      .dPad {
+        width: 90px;
+        height: 90px;
+  
+        .btnMiddle .btnCicMid {
+          width: 25px;
+          height: 25px;
+        }
+      }
+  
+      .buttons {
+        width: 80px;
+        margin-right: 20px;
+  
+        .btnLeft .btnLabel,
+        .btnRight .btnLabel {
+          left: 40px;
+        }
       }
     }
+  
+    .bottomSection {
+      .optionButtons {
+        height: 10%;
+        padding-left: 50px;
+  
+        .optBtn {
+          width: 30px;
+          height: 5px;
+        }
+      }
+  
+      .speaker {
+        gap: 7px;
+        align-self: center;
+        margin-left: -20vw;
 
-    .speaker {
-      gap: 7px;
-      // padding-bottom: 10px;
-      padding-right: 10px ;
-
-      .speakerHole {
-        height: 70px;
+        .speakerHole {
+          height: 70px;
+          
+        }
       }
     }
+  }
+
+@media (max-width: 320px) {
+
+  h4{
+    font-size: 80%;
+  }
+
+  h2 {
+    font-size: 0.75rem;
+  }
+
+  p {
+    font-size: 0.6rem;
+  }
+
+  .container .gameBoy {
+    width: 90vw;
   }
 }
