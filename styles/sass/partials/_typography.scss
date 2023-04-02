@@ -47,11 +47,13 @@ h1 {
   -webkit-text-stroke: 3px #165DAD;
   -webkit-text-fill-color: #FFCC01;
   font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  letter-spacing: 5px;
 }
 
 h2,
 h3 {
-  font-family: 'VT323', monospace;;
+  font-family: 'VT323', monospace;
+  letter-spacing: 3px;
 }
 
 h2 {
@@ -93,6 +95,7 @@ header h3 {
     font-size: 0.6rem;
     display: inline;
     font-family: $BrandFont;
+    letter-spacing: 1px;
   }
   
   .consoleName {

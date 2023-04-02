@@ -57,6 +57,18 @@ app.clickRandom = () => {
    app.getPokemon();
 };
 
+app.clickPlayMusic = () => {
+   // document.getElementById("player").play();
+   // audio = new Audio('./assets/10 Battle! (Trainer Battle).mp3');
+   app.audio.play();
+   app.audio.volume = 0.3;
+};
+
+app.clickStopMusic = () => {
+   // document.getElementById("player").play();
+   app.audio.pause();
+};
+
 app.init = () => {
    app.pokeName = document.getElementById('name');
    app.pokeHeight = document.getElementById('height');
@@ -68,13 +80,20 @@ app.init = () => {
    app.btnLeft = document.getElementById('btnLeft'); // previous
    app.btnA = document.getElementById('btnA'); // A button
    app.btnB = document.getElementById('btnB'); // B button
+   app.playBtn = document.getElementById('volUp');
+   app.stopBtn = document.getElementById('volDown');
 
    app.btnRight.addEventListener('click', app.clickNext);
    app.btnLeft.addEventListener('click', app.clickPrevious);
    app.btnA.addEventListener('click', app.clickRandom);
    app.btnB.addEventListener('click', app.clickRandom);
+   app.playBtn.addEventListener('click', app.clickPlayMusic);
+   app.stopBtn.addEventListener('click', app.clickStopMusic);
 
+   app.audio = new Audio('./assets/10 Battle! (Trainer Battle).mp3');
    app.getPokemon();
 }
 
 app.init();
+
+

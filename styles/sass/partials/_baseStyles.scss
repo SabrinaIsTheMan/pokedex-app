@@ -32,3 +32,22 @@ img {
   /* removes extra padding at bottom of images */
   height: auto;
 }
+
+.btnCircle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgb(125, 13, 55);
+  background: radial-gradient(circle, rgba(125, 13, 55, 1) 41%, rgba(187, 63, 111, 1) 100%);
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+  // color: rgb(153, 48, 88);
+}
+
+.btnSquare {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  // border: 0;
+  color: rgb(74, 74, 74);
+  font-size: 1rem;
+}

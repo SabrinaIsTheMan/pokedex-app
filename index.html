@@ -27,25 +27,43 @@
       <div class="wrapper container">
         <div class="gameBoy">
           <div class="screen">
-            <div class="display">
-              <div class="title">POKEMON</div>
-              <!-- pokemon information -->
-              <div class="leftScreen">
-                <div class="stats">
-                  <h2>name: <span id="name"></span></h2>
-                  <p>height: <span id="height"></span></p>
-                  <p>weight: <span id="weight"></span></p>
-                  <p>type: <span id="type"></span></p>
-                </div> <!-- .stats END -->
-              </div> <!-- .leftScreen END -->
 
-              <!-- pokemon sprite -->
-              <div class="rightScreen">
-                <div class="pokemonSprite">
-                  <img id="sprite" src="" alt="">
-                </div> <!-- .pokemonSprite END -->
-              </div> <!-- .rightScreen END -->
+            <div class="battery">
+              <p>BATTERY</p>
+            </div>
+
+            <div class="display">
+
+              <div class="topDisplay">
+                <h2>POKEMON</h2>
+              </div>
+              <div class="middleDisplay">
+
+                <!-- pokemon information -->
+                <div class="leftScreen">
+                  <div class="stats">
+                    <h2>name: <span id="name"></span></h2>
+                    <p>height: <span id="height"></span></p>
+                    <p>weight: <span id="weight"></span></p>
+                    <p>type: <span id="type"></span></p>
+                  </div> <!-- .stats END -->
+                </div> <!-- .leftScreen END -->
+  
+                <!-- pokemon sprite -->
+                <div class="rightScreen">
+                  <div class="pokemonSprite">
+                    <img id="sprite" src="" alt="">
+                  </div> <!-- .pokemonSprite END -->
+                </div> <!-- .rightScreen END -->
+
+              </div>
+              <div class="bottomDisplay">
+                <p>POKEMON INDEX #: <span class="pokemonIndex" id="pokemonIndex">###</span></p>
+              </div>
+
+
             </div> <!-- .display END -->
+
           </div> <!-- .screen END -->
 
           <div class="consoleTitle">
@@ -100,12 +118,19 @@
             </div>
           </div>
 
+          <div class="volume">
+              <button class="volUp" id="volUp">&#8593;</button>
+              <p>VOLUME</p>
+              <button class="volDown" id="volDown">&#8595;</button>
+          </div>
+
         </div> <!-- .gameboy END -->
       </div>
+      <button id="play">play</button>
     </section>
   </main>
   <footer>
-    <h3><a href="https://junocollege.com/">Juno College</a><span class="consoleName"></span></h3>
+    <p>Created at <a href="https://junocollege.com/">Juno College</a><span class="consoleName"></span></p>
   </footer>
   <script src="script.js"></script>
 </body>

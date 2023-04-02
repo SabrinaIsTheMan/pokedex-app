@@ -39,7 +39,7 @@ header {
     margin-top: 25px;
   
     .screen {
-      background-color: rgb(169, 168, 163);
+      background-color: #39363D;
       width: 90%;
       height: 50%;
       margin-top: 40px;
@@ -47,71 +47,86 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 10px;
   
+      .battery {
+        background-color: rgb(255, 0, 68);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: flex;
+        margin-right: 10px;
+
+        p {
+          color: $console;
+          font-size: 0.6rem;
+          position: relative;
+          bottom: -10px;
+          left: -12px;
+        }
+      }
+
       .display {
         width: 85%;
         height: 85%;
-        background-color: #f0f3a3;
+        padding: 2%;
+        background-color: #6E8503;
         display: flex;
+        flex-direction: column;
         // outline: 2px solid #000;
 
-        .title {
-          outline: 2px solid #000;
+        .topDisplay h2 {
+          text-align: center;
+          font-family: $titleSolid;
         }
 
-        .leftScreen,
-        .rightScreen {
-          width: 50%;
-          height: 100%;
+        .middleDisplay {
           display: flex;
-          justify-content: center;
-          align-items: center;
+          flex-grow: 1;
 
-          .stats {
-            width: 80%;
-            height: 50%;
-            border: 2px solid #000;
-            border-radius: 10px;
-            box-shadow: 15px 15px 0px -5px #000000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-transform: uppercase;
-            padding-left: 10%;
-            
-          }
-          .pokemonSprite {
-            width: 80%;
-            height: 50%;
+
+          .leftScreen,
+          .rightScreen {
+            width: 50%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-
-            img {
+  
+            .stats {
               width: 100%;
-              height: 100%;
+              height: 90%;
+              border: 2px solid #000;
+              border-radius: 10px;
+              box-shadow: 10px 10px 0px -5px #000000;
+              display: flex;
+              flex-direction: column;
+              text-transform: uppercase;
+              padding: 2%;
+            }
+  
+            .pokemonSprite {
+              width: 80%;
+              height: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+  
+              img {
+                width: 100%;
+              }
             }
           }
         }
+
+        // .bottomDisplay {
+        // }
+
       }
     } // screen end 
   } // gameboy end
 } // container end 
 
-// .consoleTitle {
-//   padding: 1%;
-//   align-self: flex-start;
-//   padding-left: 30px;
-
-//   .consoleBrand {
-//     font-size: 1.5rem;
-//     display: inline;
-//   }
-//   .consoleName {
-//     font-size: 1.5rem;
-
-//   }
-// }
 
 .lowerHalf {
   // outline: 2px solid #000;
@@ -122,7 +137,7 @@ header {
   padding-top: 50px;
 
   .dPad {
-    width: 150px;
+    width: auto;
     height: 150px;
     // outline: 2px solid #000;
     display: flex;
@@ -211,13 +226,12 @@ header {
   display: flex;
 
   .optionButtons {
-    width: 100px;
     height: 150px;
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 30px;
+    padding-right: 100px;
     gap: 20px;
     
     .optBtn {
@@ -237,21 +251,24 @@ header {
 
       .optLabel {
         position: absolute;
-        bottom: -25px;
+        bottom: -20px;
         text-align:center;
         width: 100%;
+        font-family: $BrandFont;
+        font-size: 0.5rem;
+        letter-spacing: 2px;
       }
     }
   }
 
   .speaker {
-    width: 170px;
-    height: 130px;
-    padding-bottom: 30px;
+    // width: 170px;
+    // height: 130px;
+    padding-bottom: 40px;
     align-self: flex-end;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 10px;
     transform: rotate(-30deg);
 
     .speakerHole {
@@ -264,25 +281,26 @@ header {
 
     }
   }
+
 }
 
-.btnCircle {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: rgb(125, 13, 55);
-    background: radial-gradient(circle, rgba(125, 13, 55, 1) 41%, rgba(187, 63, 111, 1) 100%);
-  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
-  // color: rgb(153, 48, 88);
-}
-
-.btnSquare {
-  width: 50px;
+.volume {
+  width: 100px;
   height: 50px;
-  background-color: black;
-  // border: 0;
-  color: rgb(74, 74, 74);
-  font-size: 1rem;
+  background: hsl(23, 10%, 75%);
+  border: 1px solid hsl(23, 10%, 90%);
+  border-bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 1%;
+
+  .volUp, 
+  .volDown {
+    width: 25px;
+    height: 25px;
+    background-color: $redButtons;
+    font-size: 0.5rem;
+  }
 }
 
 footer {

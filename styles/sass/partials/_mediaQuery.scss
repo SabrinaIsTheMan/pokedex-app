@@ -1,0 +1,60 @@
+/* =======================
+MEDIA QUERIES
+======================= */
+  
+  
+@media (max-width: 480px) {
+  
+  .btnCircle {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .btnSquare {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lowerHalf {
+    .dPad {
+      width: 120px;
+      height: 120px;
+
+      .btnMiddle .btnCicMid {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .buttons {
+      width: 100px;
+      margin-left: 15px;
+
+      .btnLeft .btnLabel,
+      .btnRight .btnLabel {
+        left: 40px; 
+      }
+    }
+  }
+  
+  .bottomSection {
+    .optionButtons {
+      padding-right: 0;
+
+      .optBtn {
+        width: 50px;
+        height: 10px;
+      }
+    }
+
+    .speaker {
+      gap: 7px;
+      // padding-bottom: 10px;
+      padding-right: 10px ;
+
+      .speakerHole {
+        height: 70px;
+      }
+    }
+  }
+}
