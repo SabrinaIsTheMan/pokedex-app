@@ -36,6 +36,7 @@ app.getPokemon = () => {
 // method - if button Right is pressed, add 1 from app.pokeID and fetch again;
 app.clickNext = () => {
    app.pokeID++;
+   app.pokeIndex.textContent = app.pokeID;
    if (app.pokeID === 1010) {
       app.pokeID = 1;
    }
@@ -45,6 +46,7 @@ app.clickNext = () => {
 // method - if button Left is pressed, subtract 1 from app.pokeID and fetch again;
 app.clickPrevious = () => {
    app.pokeID--;
+   app.pokeIndex.textContent = app.pokeID;
    if (app.pokeID === 1) {
       app.pokeID = 1010;
    }
@@ -54,6 +56,7 @@ app.clickPrevious = () => {
 // method - if button A or B is pressed, randomize app.pokeID and fetch again;
 app.clickRandom = () => {
    app.pokeID = (Math.floor(Math.random() * 1010 + 1)); //1 to 1010;  maximum and  minimum are inclusive
+   app.pokeIndex.textContent = app.pokeID;
    app.getPokemon();
 };
 
@@ -80,8 +83,9 @@ app.init = () => {
    app.btnLeft = document.getElementById('btnLeft'); // previous
    app.btnA = document.getElementById('btnA'); // A button
    app.btnB = document.getElementById('btnB'); // B button
-   app.playBtn = document.getElementById('volUp');
-   app.stopBtn = document.getElementById('volDown');
+   app.playBtn = document.getElementById('volUp'); // play music up btn
+   app.stopBtn = document.getElementById('volDown'); // pause music down Btn
+   app.pokeIndex = document.getElementById('pokemonIndex'); // pokemon index number (app.pokeid)
 
    app.btnRight.addEventListener('click', app.clickNext);
    app.btnLeft.addEventListener('click', app.clickPrevious);

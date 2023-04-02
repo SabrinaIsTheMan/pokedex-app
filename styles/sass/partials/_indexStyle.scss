@@ -30,6 +30,7 @@ header {
     rgba(255, 255, 255, 1) 99%,
     rgba(218, 213, 210, 1) 100%);
     height: 90%;
+    min-height: 722px;
     width: 560px;
     border-radius: 20px;
     display: flex;
@@ -48,6 +49,7 @@ header {
       justify-content: center;
       align-items: center;
       gap: 10px;
+
   
       .battery {
         background-color: rgb(255, 0, 68);
@@ -73,7 +75,7 @@ header {
         background-color: #6E8503;
         display: flex;
         flex-direction: column;
-        // outline: 2px solid #000;
+        overflow: auto; // allows for scrolling content
 
         .topDisplay h2 {
           text-align: center;
@@ -96,6 +98,8 @@ header {
             .stats {
               width: 100%;
               height: 90%;
+              min-height: 147px;
+              min-width: 147px;
               border: 2px solid #000;
               border-radius: 10px;
               box-shadow: 10px 10px 0px -5px #000000;
@@ -306,4 +310,6 @@ header {
 footer {
   height: 5vh;
   background-color: #000;
+  position: relative;
+  bottom: 0;
 }
