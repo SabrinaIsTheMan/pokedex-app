@@ -1,3 +1,39 @@
+@import './variables';
+
+@font-face {
+  font-family: "Gill Bold I";
+  src: url('../../../font/Gill\ Sans\ Bold\ Italic.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gill Bold";
+  src: url('../../../font/Gill\ Sans\ Bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "PokemonSolid";
+  src: url('../../../font/PocketMonk-15ze.ttf'),
+  url('../../../font/PokemonGb-RAeo.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "PokemonHollow";
+  src: url('../../../font/Pokemon\ Hollow.ttf'),
+    url('../../../font/PokemonGb-RAeo.ttf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Brand";
+  src: url('../../../font/RoSpritendoSemiboldBeta-vmVwZ.otf');
+  font-weight: normal;
+}
+
+
+
 h1,
 h2,
 h3,
@@ -7,27 +43,17 @@ p {
 }
 
 h1 {
-  font-family: 'Pokemon Solid', sans-serif;
-  color: yellow;
+  font-family: $titleSolid;
+  -webkit-text-stroke: 3px #165DAD;
+  -webkit-text-fill-color: #FFCC01;
+  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  letter-spacing: 5px;
 }
 
 h2,
 h3 {
-  font-family: 'VT323', monospace;;
-}
-
-p,
-select {
   font-family: 'VT323', monospace;
-}
-
-.button {
-  font-family: 'VT323', monospace;
-}
-
-h1 {
-  font-family: 'VT323', monospace;
-  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  letter-spacing: 3px;
 }
 
 h2 {
@@ -40,6 +66,48 @@ h3 {
   text-align: center;
 }
 
+p,
+select {
+  font-family: 'VT323', monospace;
+  color: $purpleBlue;
+}
+
+.button {
+  font-family: $BrandFont;
+}
+
+
 header h3 {
   color: white;
+}
+
+.consoleTitle {
+  padding-top: 20px;
+  align-self: flex-start;
+  padding-left: 30px;
+  height: 30px;
+  display: flex;
+  gap: 5px;
+  align-items: flex-end;
+  color: $purpleBlue;
+
+  .consoleBrand {
+    font-size: 0.6rem;
+    display: inline;
+    font-family: $BrandFont;
+    letter-spacing: 1px;
+  }
+  
+  .consoleName {
+    font-size: 1.2rem;
+    font-family: $consoleFont;
+    display: inline;
+    line-height: 0;
+    padding-bottom: 2px;
+    
+    .tm {
+      font-size: 0.5rem;
+    
+    }
+  }
 }

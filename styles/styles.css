@@ -225,7 +225,6 @@ html {
   background-color: #222;
   background-image: url("../assets/background1.jpg");
   font-size: 125%;
-  overflow: hidden;
   background-size: cover;
 }
 
@@ -255,6 +254,49 @@ img {
   height: auto;
 }
 
+.btnCircle {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgb(125, 13, 55);
+  background: radial-gradient(circle, rgb(125, 13, 55) 41%, rgb(187, 63, 111) 100%);
+  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+}
+
+.btnSquare {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: rgb(74, 74, 74);
+  font-size: 1rem;
+}
+
+@font-face {
+  font-family: "Gill Bold I";
+  src: url("../../../font/Gill Sans Bold Italic.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gill Bold";
+  src: url("../../../font/Gill Sans Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("../../../font/PocketMonk-15ze.ttf"), url("../../../font/PokemonGb-RAeo.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "PokemonHollow";
+  src: url("../../../font/Pokemon Hollow.ttf"), url("../../../font/PokemonGb-RAeo.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Brand";
+  src: url("../../../font/RoSpritendoSemiboldBeta-vmVwZ.otf");
+  font-weight: normal;
+}
 h1,
 h2,
 h3,
@@ -264,27 +306,17 @@ p {
 }
 
 h1 {
-  font-family: "Pokemon Solid", sans-serif;
-  color: yellow;
+  font-family: "PokemonSolid";
+  -webkit-text-stroke: 3px #165DAD;
+  -webkit-text-fill-color: #FFCC01;
+  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  letter-spacing: 5px;
 }
 
 h2,
 h3 {
   font-family: "VT323", monospace;
-}
-
-p,
-select {
-  font-family: "VT323", monospace;
-}
-
-.button {
-  font-family: "VT323", monospace;
-}
-
-h1 {
-  font-family: "VT323", monospace;
-  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  letter-spacing: 3px;
 }
 
 h2 {
@@ -297,13 +329,55 @@ h3 {
   text-align: center;
 }
 
+p,
+select {
+  font-family: "VT323", monospace;
+  color: #4A3F89;
+}
+
+.button {
+  font-family: "Brand";
+}
+
 header h3 {
   color: white;
 }
 
+.consoleTitle {
+  padding-top: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #4A3F89;
+}
+.consoleTitle .consoleBrand {
+  font-size: 0.6rem;
+  display: inline;
+  font-family: "Brand";
+  letter-spacing: 1px;
+}
+.consoleTitle .consoleName {
+  font-size: 1.2rem;
+  font-family: "Gill Bold I";
+  display: inline;
+  line-height: 0;
+  padding-bottom: 2px;
+}
+.consoleTitle .consoleName .tm {
+  font-size: 0.5rem;
+}
+
 header {
   background-color: rgba(0, 0, 0, 0.5);
-  height: auto;
+  height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,10 +407,14 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 80vh;
 }
 .container .gameBoy {
-  background-color: #fbf3d7;
-  height: 1000px;
+  background: rgb(218, 213, 210);
+  background: -webkit-gradient(linear, right top, left top, from(rgb(218, 213, 210)), color-stop(2%, rgb(255, 255, 255)), color-stop(3%, rgb(218, 213, 210)), color-stop(97%, rgb(218, 213, 210)), color-stop(99%, rgb(255, 255, 255)), to(rgb(218, 213, 210)));
+  background: linear-gradient(270deg, rgb(218, 213, 210) 0%, rgb(255, 255, 255) 2%, rgb(218, 213, 210) 3%, rgb(218, 213, 210) 97%, rgb(255, 255, 255) 99%, rgb(218, 213, 210) 100%);
+  height: 90%;
+  min-height: 722px;
   width: 560px;
   border-radius: 20px;
   display: -webkit-box;
@@ -352,7 +430,7 @@ header h2 {
   margin-top: 25px;
 }
 .container .gameBoy .screen {
-  background-color: rgb(169, 168, 163);
+  background-color: #39363D;
   width: 90%;
   height: 50%;
   margin-top: 40px;
@@ -366,17 +444,53 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 10px;
+}
+.container .gameBoy .screen .battery {
+  background-color: rgb(255, 0, 68);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+}
+.container .gameBoy .screen .battery p {
+  color: #DAD5D2;
+  font-size: 0.6rem;
+  position: relative;
+  bottom: -10px;
+  left: -12px;
 }
 .container .gameBoy .screen .display {
   width: 85%;
   height: 85%;
-  background-color: #f0f3a3;
+  padding: 2%;
+  background-color: #6E8503;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: auto;
 }
-.container .gameBoy .screen .display .leftScreen,
-.container .gameBoy .screen .display .rightScreen {
+.container .gameBoy .screen .display .topDisplay h2 {
+  text-align: center;
+  font-family: "PokemonSolid";
+}
+.container .gameBoy .screen .display .middleDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.container .gameBoy .screen .display .middleDisplay .leftScreen,
+.container .gameBoy .screen .display .middleDisplay .rightScreen {
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -389,14 +503,16 @@ header h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.container .gameBoy .screen .display .leftScreen .stats,
-.container .gameBoy .screen .display .rightScreen .stats {
-  width: 90%;
-  height: 50%;
+.container .gameBoy .screen .display .middleDisplay .leftScreen .stats,
+.container .gameBoy .screen .display .middleDisplay .rightScreen .stats {
+  width: 100%;
+  height: 90%;
+  min-height: 147px;
+  min-width: 147px;
   border: 2px solid #000;
   border-radius: 10px;
-  -webkit-box-shadow: 15px 15px 0px -5px #000000;
-          box-shadow: 15px 15px 0px -5px #000000;
+  -webkit-box-shadow: 10px 10px 0px -5px #000000;
+          box-shadow: 10px 10px 0px -5px #000000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -404,14 +520,11 @@ header h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-transform: uppercase;
-  padding-left: 5%;
+  padding: 2%;
 }
-.container .gameBoy .screen .display .leftScreen .pokemonSprite,
-.container .gameBoy .screen .display .rightScreen .pokemonSprite {
+.container .gameBoy .screen .display .middleDisplay .leftScreen .pokemonSprite,
+.container .gameBoy .screen .display .middleDisplay .rightScreen .pokemonSprite {
   width: 80%;
   height: 50%;
   display: -webkit-box;
@@ -424,36 +537,23 @@ header h2 {
       -ms-flex-align: center;
           align-items: center;
 }
-.container .gameBoy .screen .display .leftScreen .pokemonSprite img,
-.container .gameBoy .screen .display .rightScreen .pokemonSprite img {
+.container .gameBoy .screen .display .middleDisplay .leftScreen .pokemonSprite img,
+.container .gameBoy .screen .display .middleDisplay .rightScreen .pokemonSprite img {
   width: 100%;
-  height: 100%;
-}
-
-.consoleTitle {
-  padding: 1%;
-  padding-left: 6%;
-  width: 100%;
-  justify-self: flex-start;
-}
-.consoleTitle .consoleName {
-  font-size: 2rem;
-  text-transform: uppercase;
 }
 
 .lowerHalf {
   width: 80%;
-  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .lowerHalf .dPad {
-  width: 150px;
+  width: auto;
   height: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -475,6 +575,14 @@ header h2 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.lowerHalf .dPad .btnTop .btnDpadUp,
+.lowerHalf .dPad .btnLower .btnDpadUp {
+  border-bottom: 0;
+}
+.lowerHalf .dPad .btnTop .btnDpadDown,
+.lowerHalf .dPad .btnLower .btnDpadDown {
+  border-top: 0;
+}
 .lowerHalf .dPad .btnMiddle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -483,6 +591,14 @@ header h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: black;
+}
+.lowerHalf .dPad .btnMiddle .btnDpadLeft {
+  border-right: 0;
+  text-align: left;
+}
+.lowerHalf .dPad .btnMiddle .btnDpadRight {
+  border-left: 0;
+  text-align: right;
 }
 .lowerHalf .dPad .btnMiddle .btnCicMid {
   width: 45px;
@@ -494,8 +610,8 @@ header h2 {
   border-radius: 50%;
 }
 .lowerHalf .buttons {
-  width: 150px;
-  height: 150px;
+  width: 145px;
+  height: 145px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -507,24 +623,165 @@ header h2 {
 .lowerHalf .buttons .btnLeft {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  position: relative;
+}
+.lowerHalf .buttons .btnLeft .btnLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 55px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  font-family: "Gill Bold";
+}
+.lowerHalf .buttons .btnRight {
+  position: relative;
+}
+.lowerHalf .buttons .btnRight .btnLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 55px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  font-family: "Gill Bold";
 }
 
-.btnCircle {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background: linear-gradient(315deg, rgb(236, 152, 152) 0%, rgb(255, 0, 0) 38%);
-  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
-          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+.bottomSection {
+  width: 90%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bottomSection .optionButtons {
+  height: 150px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 100px;
+  gap: 20px;
+}
+.bottomSection .optionButtons .optBtn {
+  width: 70px;
+  height: 15px;
+  background: rgb(85, 85, 85);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(85, 85, 85)), color-stop(0%, rgb(85, 85, 85)), color-stop(19%, rgb(131, 131, 131)), color-stop(28%, rgb(85, 85, 85)), color-stop(76%, rgb(85, 85, 85)), color-stop(85%, rgb(131, 131, 131)), to(rgb(85, 85, 85)));
+  background: linear-gradient(0deg, rgb(85, 85, 85) 0%, rgb(85, 85, 85) 0%, rgb(131, 131, 131) 19%, rgb(85, 85, 85) 28%, rgb(85, 85, 85) 76%, rgb(131, 131, 131) 85%, rgb(85, 85, 85) 100%);
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  border-radius: 10px;
+  position: relative;
+}
+.bottomSection .optionButtons .optBtn .optLabel {
+  position: absolute;
+  bottom: -20px;
+  text-align: center;
+  width: 100%;
+  font-family: "Brand";
+  font-size: 0.5rem;
+  letter-spacing: 2px;
+}
+.bottomSection .speaker {
+  padding-bottom: 40px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 10px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+.bottomSection .speaker .speakerHole {
+  width: 10px;
+  height: 100px;
+  background: rgb(162, 159, 157);
+  border-left: 2px solid #000;
+  border-radius: 5px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
-.btnSquare {
-  width: 50px;
+.volume {
+  width: 100px;
   height: 50px;
-  background-color: black;
-  border: 0;
-  color: rgb(74, 74, 74);
-  font-size: 1.5rem;
-  -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
-          box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
+  background: hsl(23, 10%, 75%);
+  border: 1px solid hsl(23, 10%, 90%);
+  border-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1%;
+}
+.volume .volUp,
+.volume .volDown {
+  width: 25px;
+  height: 25px;
+  background-color: #993058;
+  font-size: 0.5rem;
+}
+
+footer {
+  height: 5vh;
+  background-color: #000;
+  position: relative;
+  bottom: 0;
+}
+
+/************
+MEDIA QUERIES
+*************/
+@media (max-width: 480px) {
+  .btnCircle {
+    width: 45px;
+    height: 45px;
+  }
+  .btnSquare {
+    width: 40px;
+    height: 40px;
+  }
+  .lowerHalf .dPad {
+    width: 120px;
+    height: 120px;
+  }
+  .lowerHalf .dPad .btnMiddle .btnCicMid {
+    width: 30px;
+    height: 30px;
+  }
+  .lowerHalf .buttons {
+    width: 100px;
+    margin-left: 15px;
+  }
+  .lowerHalf .buttons .btnLeft .btnLabel,
+  .lowerHalf .buttons .btnRight .btnLabel {
+    left: 40px;
+  }
+  .bottomSection .optionButtons {
+    padding-right: 0;
+  }
+  .bottomSection .optionButtons .optBtn {
+    width: 50px;
+    height: 10px;
+  }
+  .bottomSection .speaker {
+    gap: 7px;
+    padding-right: 10px;
+  }
+  .bottomSection .speaker .speakerHole {
+    height: 70px;
+  }
 }
