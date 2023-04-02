@@ -225,7 +225,6 @@ html {
   background-color: #222;
   background-image: url("../../../assets/background1.jpg");
   font-size: 125%;
-  overflow: hidden;
   background-size: cover;
 }
 
@@ -255,6 +254,31 @@ img {
   height: auto;
 }
 
+@font-face {
+  font-family: "Gill Bold I";
+  src: url("../../../font/Gill Sans Bold Italic.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gill Bold";
+  src: url("../../../font/Gill Sans Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "PokemonSolid";
+  src: url("../../../font/PocketMonk-15ze.ttf"), url("../../../font/PokemonGb-RAeo.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "PokemonHollow";
+  src: url("../../../font/Pokemon Hollow.ttf"), url("../../../font/PokemonGb-RAeo.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Brand";
+  src: url("../../../font/RoSpritendoSemiboldBeta-vmVwZ.otf");
+  font-weight: normal;
+}
 h1,
 h2,
 h3,
@@ -264,27 +288,15 @@ p {
 }
 
 h1 {
-  font-family: "Pokemon Solid", sans-serif;
-  color: yellow;
+  font-family: "PokemonSolid";
+  -webkit-text-stroke: 3px #165DAD;
+  -webkit-text-fill-color: #FFCC01;
+  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
 }
 
 h2,
 h3 {
   font-family: "VT323", monospace;
-}
-
-p,
-select {
-  font-family: "VT323", monospace;
-}
-
-.button {
-  font-family: "VT323", monospace;
-}
-
-h1 {
-  font-family: "VT323", monospace;
-  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
 }
 
 h2 {
@@ -297,13 +309,54 @@ h3 {
   text-align: center;
 }
 
+p,
+select {
+  font-family: "VT323", monospace;
+  color: #4A3F89;
+}
+
+.button {
+  font-family: "Brand";
+}
+
 header h3 {
   color: white;
 }
 
+.consoleTitle {
+  padding-top: 20px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding-left: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  color: #4A3F89;
+}
+.consoleTitle .consoleBrand {
+  font-size: 0.6rem;
+  display: inline;
+  font-family: "Brand";
+}
+.consoleTitle .consoleName {
+  font-size: 1.2rem;
+  font-family: "Gill Bold I";
+  display: inline;
+  line-height: 0;
+  padding-bottom: 2px;
+}
+.consoleTitle .consoleName .tm {
+  font-size: 0.5rem;
+}
+
 header {
   background-color: rgba(0, 0, 0, 0.5);
-  height: auto;
+  height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,10 +386,13 @@ header h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 80vh;
 }
 .container .gameBoy {
-  background-color: #fbf3d7;
-  height: 1000px;
+  background: rgb(218, 213, 210);
+  background: -webkit-gradient(linear, right top, left top, from(rgb(218, 213, 210)), color-stop(2%, rgb(255, 255, 255)), color-stop(3%, rgb(218, 213, 210)), color-stop(97%, rgb(218, 213, 210)), color-stop(99%, rgb(255, 255, 255)), to(rgb(218, 213, 210)));
+  background: linear-gradient(270deg, rgb(218, 213, 210) 0%, rgb(255, 255, 255) 2%, rgb(218, 213, 210) 3%, rgb(218, 213, 210) 97%, rgb(255, 255, 255) 99%, rgb(218, 213, 210) 100%);
+  height: 90%;
   width: 560px;
   border-radius: 20px;
   display: -webkit-box;
@@ -377,6 +433,9 @@ header h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.container .gameBoy .screen .display .title {
+  outline: 2px solid #000;
 }
 .container .gameBoy .screen .display .leftScreen,
 .container .gameBoy .screen .display .rightScreen {
@@ -433,26 +492,15 @@ header h2 {
   height: 100%;
 }
 
-.consoleTitle {
-  padding: 1%;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  padding-left: 30px;
-}
-.consoleTitle .consoleName {
-  font-size: 2rem;
-}
-
 .lowerHalf {
   width: 80%;
-  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .lowerHalf .dPad {
   width: 150px;
@@ -477,6 +525,14 @@ header h2 {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.lowerHalf .dPad .btnTop .btnDpadUp,
+.lowerHalf .dPad .btnLower .btnDpadUp {
+  border-bottom: 0;
+}
+.lowerHalf .dPad .btnTop .btnDpadDown,
+.lowerHalf .dPad .btnLower .btnDpadDown {
+  border-top: 0;
+}
 .lowerHalf .dPad .btnMiddle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -485,6 +541,14 @@ header h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: black;
+}
+.lowerHalf .dPad .btnMiddle .btnDpadLeft {
+  border-right: 0;
+  text-align: left;
+}
+.lowerHalf .dPad .btnMiddle .btnDpadRight {
+  border-left: 0;
+  text-align: right;
 }
 .lowerHalf .dPad .btnMiddle .btnCicMid {
   width: 45px;
@@ -496,8 +560,8 @@ header h2 {
   border-radius: 50%;
 }
 .lowerHalf .buttons {
-  width: 150px;
-  height: 150px;
+  width: 145px;
+  height: 145px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,14 +573,102 @@ header h2 {
 .lowerHalf .buttons .btnLeft {
   -ms-flex-item-align: end;
       align-self: flex-end;
+  position: relative;
+}
+.lowerHalf .buttons .btnLeft .btnLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 55px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  font-family: "Gill Bold";
+}
+.lowerHalf .buttons .btnRight {
+  position: relative;
+}
+.lowerHalf .buttons .btnRight .btnLabel {
+  position: absolute;
+  bottom: -30px;
+  left: 55px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  font-family: "Gill Bold";
+}
+
+.bottomSection {
+  width: 90%;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bottomSection .optionButtons {
+  width: 100px;
+  height: 150px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 30px;
+  gap: 20px;
+}
+.bottomSection .optionButtons .optBtn {
+  width: 70px;
+  height: 15px;
+  background: rgb(85, 85, 85);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgb(85, 85, 85)), color-stop(0%, rgb(85, 85, 85)), color-stop(19%, rgb(131, 131, 131)), color-stop(28%, rgb(85, 85, 85)), color-stop(76%, rgb(85, 85, 85)), color-stop(85%, rgb(131, 131, 131)), to(rgb(85, 85, 85)));
+  background: linear-gradient(0deg, rgb(85, 85, 85) 0%, rgb(85, 85, 85) 0%, rgb(131, 131, 131) 19%, rgb(85, 85, 85) 28%, rgb(85, 85, 85) 76%, rgb(131, 131, 131) 85%, rgb(85, 85, 85) 100%);
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  border-radius: 10px;
+  position: relative;
+}
+.bottomSection .optionButtons .optBtn .optLabel {
+  position: absolute;
+  bottom: -25px;
+  text-align: center;
+  width: 100%;
+}
+.bottomSection .speaker {
+  width: 170px;
+  height: 130px;
+  padding-bottom: 30px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 15px;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+.bottomSection .speaker .speakerHole {
+  width: 10px;
+  height: 100px;
+  background: rgb(162, 159, 157);
+  border-left: 2px solid #000;
+  border-radius: 5px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .btnCircle {
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  background: rgb(236, 152, 152);
-  background: linear-gradient(315deg, rgb(236, 152, 152) 0%, rgb(255, 0, 0) 38%);
+  background: rgb(125, 13, 55);
+  background: radial-gradient(circle, rgb(125, 13, 55) 41%, rgb(187, 63, 111) 100%);
   -webkit-box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
           box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.61);
 }
@@ -525,7 +677,11 @@ header h2 {
   width: 50px;
   height: 50px;
   background-color: black;
-  border: 0;
   color: rgb(74, 74, 74);
-  font-size: 1.5rem;
+  font-size: 1rem;
+}
+
+footer {
+  height: 5vh;
+  background-color: #000;
 }
