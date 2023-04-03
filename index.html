@@ -17,9 +17,9 @@
   
   <header>
     <h1>Pokemon Pokédex</h1>
-    <h3>Click A or B to see a random Pokémon</h3>
-    <h3>Click Right to see the next Pokémon</h3>
-    <h3>Click Left to see the previous Pokémon</h3>
+    <h4><span class="instructionBtn">A</span> or <span class="instructionBtn">B</span> to see a random Pokémon</h4>
+    <h4><span class="instructionBtn instructionArrows">→</span> to see the next Pokémon</h4>
+    <h4><span class="instructionBtn instructionArrows">←</span> to see the previous Pokémon</h4>
   </header>
   
   <main>
@@ -29,6 +29,7 @@
           <div class="screen">
 
             <div class="battery">
+              <div class="batteryLight"></divclass></div>
               <p>BATTERY</p>
             </div>
 
@@ -37,15 +38,17 @@
               <div class="topDisplay">
                 <h2>POKEMON</h2>
               </div>
-              <div class="middleDisplay">
 
+              <div class="middleDisplay">
                 <!-- pokemon information -->
                 <div class="leftScreen">
                   <div class="stats">
-                    <h2>name: <span id="name"></span></h2>
-                    <p>height: <span id="height"></span></p>
-                    <p>weight: <span id="weight"></span></p>
-                    <p>type: <span id="type"></span></p>
+                    <p>Pokedex No. <span class="pokemonIndex" id="pokemonIndex">77</span></p>
+                    <h2>Name:</h2>
+                    <h2><span id="name"></span></h2>
+                    <p>Height: <span id="height"></span></p>
+                    <p>Weight: <span id="weight"></span></p>
+                    <p>Type: <span id="type"></span></p>
                   </div> <!-- .stats END -->
                 </div> <!-- .leftScreen END -->
   
@@ -55,13 +58,7 @@
                     <img id="sprite" src="" alt="">
                   </div> <!-- .pokemonSprite END -->
                 </div> <!-- .rightScreen END -->
-
-              </div>
-              <div class="bottomDisplay">
-                <p>POKEMON INDEX #: <span class="pokemonIndex" id="pokemonIndex">77</span></p>
-              </div>
-
-
+              </div><!-- .middleDisplay END -->
             </div> <!-- .display END -->
 
           </div> <!-- .screen END -->
@@ -129,7 +126,7 @@
     </section>
   </main>
   <footer>
-    <p>Created at <a href="https://junocollege.com/">Juno College</a><span class="consoleName"></span></p>
+    <p>Created by <a href="https://github.com/deanglane">Dean</a> and <a href="https://github.com/SabrinaIsTheMan">Sabrina</a> at <a href="https://junocollege.com/">Juno College</a><span class="consoleName"></span></p>
   </footer>
   <script src="script.js"></script>
 </body>

@@ -46,23 +46,25 @@ h1 {
   font-family: $titleSolid;
   -webkit-text-stroke: 3px #165DAD;
   -webkit-text-fill-color: #FFCC01;
-  font-size: clamp(2rem, 1.4167rem + 2.9167vw, 3.75rem);
+  font-size: 3rem;
   letter-spacing: 5px;
+  text-align: center;
 }
 
 h2,
-h3 {
+h3,
+h4 {
   font-family: 'VT323', monospace;
   letter-spacing: 3px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 h3 {
-  font-size: 1.1rem;
-  line-height: 30px;
+  font-size: 0.9rem;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -70,21 +72,23 @@ p,
 select {
   font-family: 'VT323', monospace;
   color: $purpleBlue;
+  font-size: 0.75rem;
 }
 
 .button {
   font-family: $BrandFont;
 }
 
-
-header h3 {
+header h4 {
   color: white;
+  line-height: 0rem;
+  font-size: 80%;
 }
 
 .consoleTitle {
   padding-top: 20px;
   align-self: flex-start;
-  padding-left: 30px;
+  padding-left: 35px;
   height: 30px;
   display: flex;
   gap: 5px;
