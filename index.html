@@ -9,46 +9,57 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-  <link href="./assets/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="./assets/favicon.ico" rel="icon" type="image/x-icon"/>
 
-  <title>Pokédex</title>
+  <title>Dean and Sabrina's Pokédex</title>
 </head>
 <body>
   
   <header>
-    <h1>Pokemon Pokédex</h1>
-    <h4><span class="instructionBtn">A</span> or <span class="instructionBtn">B</span> to see a random Pokémon</h4>
-    <h4><span class="instructionBtn instructionArrows">→</span> to see the next Pokémon</h4>
-    <h4><span class="instructionBtn instructionArrows">←</span> to see the previous Pokémon</h4>
+    <h1>Pokémon Pokédex</h1>
+    <h3><span class="instructionBtn">A</span> or <span class="instructionBtn">B</span> to see a random Pokémon</h3>
+    <h3><span class="instructionBtn instructionArrows">→</span> to see the next Pokémon</h3>
+    <h3><span class="instructionBtn instructionArrows">←</span> to see the previous Pokémon</h3>
   </header>
   
   <main>
     <section>
       <div class="wrapper container">
-        <div class="gameBoy">
+        <div class="gameBox">
+
+          <!-- Music Controls -->
+          <div class="music">
+            <button class="onOff" id="onOff"></button>
+            <p class="btnLabel">⏯</p>
+          </div>
+
+          <!-- screen protector and display -->
           <div class="screen">
 
+            <!-- Battery indicator -->
             <div class="battery">
               <div class="batteryLight"></divclass></div>
               <p>BATTERY</p>
             </div>
 
+            <!-- Main LED Dispaly -->
             <div class="display">
 
+              <!-- Top header container of the display -->
               <div class="topDisplay">
-                <h2>POKEMON</h2>
+                <h2><span id="name"></span></h2>
               </div>
 
-              <div class="middleDisplay">
+              <!-- Bottom container of the dispay -->
+              <div class="bottomDisplay">
+
                 <!-- pokemon information -->
                 <div class="leftScreen">
                   <div class="stats">
-                    <p>Pokedex No. <span class="pokemonIndex" id="pokemonIndex">77</span></p>
-                    <h2>Name:</h2>
-                    <h2><span id="name"></span></h2>
                     <p>Height: <span id="height"></span></p>
                     <p>Weight: <span id="weight"></span></p>
                     <p>Type: <span id="type"></span></p>
+                    <p>Pokedex No. <span class="pokemonIndex" id="pokemonIndex">77</span></p>
                   </div> <!-- .stats END -->
                 </div> <!-- .leftScreen END -->
   
@@ -69,6 +80,8 @@
           </div>
 
           <div class="lowerHalf">
+
+            <!-- Dpad buttons section -->
             <div class="dPad">
               <div class="btnTop">
                 <button class="btnSquare btnDpadUp" id="btnUp">&uarr;</button>
@@ -83,12 +96,13 @@
               </div>
             </div> <!-- .dPad END -->
           
+            <!-- Buttons A 7 B Section -->
             <div class="buttons">
-              <div class="btnLeft">
+              <div class="btnRight">
                 <button class="btnCircle" id="btnA"></button>
                 <p class="btnLabel">A</p>
               </div>
-              <div class="btnRight">
+              <div class="btnLeft">
                 <button class="btnCircle" id="btnB"></button>
                 <p class="btnLabel">B</p>
               </div>
@@ -115,11 +129,9 @@
             </div>
           </div>
 
-          <div class="volume">
-              <button class="volUp" id="volUp">&#8593;</button>
-              <p>VOLUME</p>
-              <button class="volDown" id="volDown">&#8595;</button>
-          </div>
+          <!-- <div class="music">
+              <button class="onOff" id="onOff">⏯</button>
+          </div> -->
 
         </div> <!-- .gameboy END -->
       </div>

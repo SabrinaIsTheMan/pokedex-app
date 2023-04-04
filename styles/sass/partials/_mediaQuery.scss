@@ -1,24 +1,52 @@
-/* =======================
+/**************
 MEDIA QUERIES
-======================= */
+**************/
   
   
+@media (max-width: 1200px) {
+
+  .container .gameBox {
+    width: 60vw;
+    min-height: 100vh;
+  }
+}
+
 @media (max-width: 768px) {
 
-  .container .gameBoy {
-    width: 80vw;
+  .container .gameBox {
+      min-height: 90vh;
+    }
+
+  .bottomSection {
+    padding-top: 20px;
   }
 }
 
 @media (max-width: 480px) {
 
-  .container .gameBoy {
-    min-height: 70vh;
-  }
+  .container .gameBox {
+      width: 80vw;
+      min-height: 90vh;
+    }
 
+  .container .gameBox .screen .display {
+    height: auto;
+  }
+  
+    .container .gameBox .screen .display .bottomDisplay .leftScreen .stats {
+    padding: 10% 5%;
+  }  
+}
+
+
+@media (max-width: 320px) {
+
+  .container .gameBox {
+      min-height: 80vh;
+    }
   .btnCircle {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
   
     .btnSquare {
@@ -51,7 +79,9 @@ MEDIA QUERIES
     .bottomSection {
       .optionButtons {
         height: 10%;
-        padding-left: 50px;
+        // padding-left: 50px;
+        padding-top: 50px;
+        justify-content: flex-start;
   
         .optBtn {
           width: 30px;
@@ -62,7 +92,7 @@ MEDIA QUERIES
       .speaker {
         gap: 7px;
         align-self: center;
-        margin-left: -20vw;
+        margin-left: -40vw;
 
         .speakerHole {
           height: 70px;
@@ -74,7 +104,12 @@ MEDIA QUERIES
 
 @media (max-width: 320px) {
 
-  h4{
+  h1 {
+    font-size: 2.5rem;
+    -webkit-text-stroke: 1.5px #165DAD;
+  }
+
+  h3{
     font-size: 80%;
   }
 
@@ -89,4 +124,10 @@ MEDIA QUERIES
   .container .gameBoy {
     width: 90vw;
   }
+
+  .consoleTitle {
+    // padding-top: 5px;
+    align-self: flex-start;
+    padding-left: 20px;
+}
 }

@@ -2,6 +2,8 @@ const app = {};
 
 app.pokeID = '77';
 
+// app.isPlaying = false;
+
 app.getPokemon = () => {
    fetch(`https://pokeapi.co/api/v2/pokemon/${app.pokeID}`)
       .then((response) => {
@@ -60,17 +62,9 @@ app.clickRandom = () => {
    app.getPokemon();
 };
 
-
-app.clickPlayMusic = () => {
-   // document.getElementById("player").play();
-   // audio = new Audio('./assets/10 Battle! (Trainer Battle).mp3');
-   app.audio.play();
-   app.audio.volume = 0.3;
-};
-
-app.clickStopMusic = () => {
-   // document.getElementById("player").play();
-   app.audio.pause();
+// method - play/pause music with button
+app.music = () => {
+   app.audio.paused ? app.audio.play() : app.audio.pause();
 };
 
 // keydown events
@@ -84,6 +78,9 @@ app.keyEvents = () => {
       }
       else if (event.code === 'KeyA' || event.code === 'KeyB') { // A or B button
          app.clickRandom();
+      }
+      else if (event.code === 'Space') { //spacebar for music
+         app.music();
       }
    });
 }
@@ -99,9 +96,11 @@ app.init = () => {
    app.btnLeft = document.getElementById('btnLeft'); // left button
    app.btnA = document.getElementById('btnA'); // A button
    app.btnB = document.getElementById('btnB'); // B button
-   app.playBtn = document.getElementById('volUp'); // play music up btn
-   app.stopBtn = document.getElementById('volDown'); // pause music down Btn
+   app.musicBtn = document.getElementById('onOff'); // music play/pause button
    app.pokeIndex = document.getElementById('pokemonIndex'); // pokemon index number (app.pokeid)
+
+   app.audio = new Audio('./assets/10 Battle! (Trainer Battle).mp3');
+   app.audio.volume = 0.1;
 
    // disable up and down buttons
    app.btnUp = document.getElementById('btnUp').disabled = true;
@@ -112,12 +111,9 @@ app.init = () => {
    app.btnLeft.addEventListener('click', app.clickPrevious);
    app.btnA.addEventListener('click', app.clickRandom);
    app.btnB.addEventListener('click', app.clickRandom);
-   app.playBtn.addEventListener('click', app.clickPlayMusic);
-   app.stopBtn.addEventListener('click', app.clickStopMusic);
-
-   app.audio = new Audio('./assets/10 Battle! (Trainer Battle).mp3');
+   app.musicBtn.addEventListener('click', app.music);
    app.keyEvents();
-
+   
    app.getPokemon();
 }
 
