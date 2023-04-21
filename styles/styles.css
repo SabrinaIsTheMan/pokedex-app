@@ -320,14 +320,14 @@ h3 {
 }
 
 h2 {
-  font-size: 1rem;
-}
-
-h3 {
   font-size: 0.9rem;
   line-height: 2rem;
   text-align: center;
   color: white;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 p,
@@ -343,12 +343,6 @@ select {
 
 .button {
   font-family: "Brand";
-}
-
-header h4 {
-  color: white;
-  line-height: 0rem;
-  font-size: 80%;
 }
 
 .consoleTitle {
@@ -522,7 +516,7 @@ header .instructionArrows {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.container .gameBox .screen .display .topDisplay h2 {
+.container .gameBox .screen .display .topDisplay h3 {
   text-align: center;
   text-transform: uppercase;
   font-size: 1.25rem;
@@ -858,10 +852,10 @@ MEDIA QUERIES
     font-size: 2.5rem;
     -webkit-text-stroke: 1.5px #165DAD;
   }
-  h3 {
+  h2 {
     font-size: 80%;
   }
-  h2 {
+  h3 {
     font-size: 0.75rem;
   }
   p {

@@ -79,7 +79,6 @@ MEDIA QUERIES
     .bottomSection {
       .optionButtons {
         height: 10%;
-        // padding-left: 50px;
         padding-top: 50px;
         justify-content: flex-start;
   
@@ -109,11 +108,11 @@ MEDIA QUERIES
     -webkit-text-stroke: 1.5px #165DAD;
   }
 
-  h3{
+  h2{
     font-size: 80%;
   }
 
-  h2 {
+  h3 {
     font-size: 0.75rem;
   }
 
@@ -126,7 +125,6 @@ MEDIA QUERIES
   }
 
   .consoleTitle {
-    // padding-top: 5px;
     align-self: flex-start;
     padding-left: 20px;
 }

@@ -2,13 +2,10 @@ const app = {};
 
 app.pokeID = '77';
 
-// app.isPlaying = false;
-
 app.getPokemon = () => {
    fetch(`https://pokeapi.co/api/v2/pokemon/${app.pokeID}`)
       .then((response) => {
          if (response.ok) {
-            console.log(response);
             return response.json();
          } else {
             throw new Error(response.statusText);
@@ -38,20 +35,24 @@ app.getPokemon = () => {
 // method - if button Right is pressed, add 1 from app.pokeID and fetch again;
 app.clickNext = () => {
    app.pokeID++;
-   app.pokeIndex.textContent = app.pokeID;
-   if (app.pokeID === 1010) {
+   
+   if (app.pokeID === 1011) {
       app.pokeID = 1;
    }
+   
+   app.pokeIndex.textContent = app.pokeID;
    app.getPokemon();
 };
 
 // method - if button Left is pressed, subtract 1 from app.pokeID and fetch again;
 app.clickPrevious = () => {
    app.pokeID--;
-   app.pokeIndex.textContent = app.pokeID;
-   if (app.pokeID === 1) {
+   
+   if (app.pokeID === 0) {
       app.pokeID = 1010;
    }
+
+   app.pokeIndex.textContent = app.pokeID;
    app.getPokemon();
 };
 
@@ -78,9 +79,6 @@ app.keyEvents = () => {
       }
       else if (event.code === 'KeyA' || event.code === 'KeyB') { // A or B button
          app.clickRandom();
-      }
-      else if (event.code === 'Space') { //spacebar for music
-         app.music();
       }
    });
 }

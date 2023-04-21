@@ -56,14 +56,14 @@ h3
 }
 
 h2 {
-  font-size: 1rem;
-}
-
-h3 {
   font-size: 0.9rem;
   line-height: 2rem;
   text-align: center;
   color: white;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 p,
@@ -79,12 +79,6 @@ select {
 
 .button {
   font-family: $BrandFont;
-}
-
-header h4 {
-  color: white;
-  line-height: 0rem;
-  font-size: 80%;
 }
 
 .consoleTitle {
