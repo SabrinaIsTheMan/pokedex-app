@@ -18,7 +18,7 @@ header {
 
     .instructionBtn {
       padding: 2px 5px;
-      
+
     }
 
     .instructionArrows {
@@ -26,7 +26,7 @@ header {
   }
 }
 
-// console container section 
+// console container section
 .container {
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ header {
   // gamebox console container
   .gameBox {
     background: rgb(218, 213, 210);
-    background: 
+    background:
     linear-gradient(270deg, rgba(218, 213, 210, 1) 0%,
     rgba(255, 255, 255, 1) 2%,
     rgba(218, 213, 210, 1) 3%,
@@ -47,18 +47,18 @@ header {
     rgba(218, 213, 210, 1) 100%);
     height: auto;
     min-height: 71.5vh;
-    width: 30vw;
+    width: 50vw;
     border-radius: 20px 20px 80px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-  
+
     // music toggle on/off button
     .music {
-      width: 90%; 
+      width: 90%;
       display: flex;
       align-items: center;
-      
+
       // btn style
       .onOff {
         width: 25px;
@@ -67,7 +67,7 @@ header {
         background-color: $redButtons;
         padding: 0 1%;
       }
-      
+
       // music button font
       p {
         font-size: 1.2rem;
@@ -85,7 +85,8 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-  
+      padding-right: 20px;
+
       // battery life indicator display
       .battery {
         display: flex;
@@ -93,7 +94,7 @@ header {
         align-items: center;
         width: auto;
         margin-left: 3%;
-        
+
         // battery led
         .batteryLight {
           background-color: #be0536;
@@ -106,7 +107,7 @@ header {
         // battery label
         p {
           color: $console;
-          font-size: 0.5rem;  
+          font-size: 0.5rem;
         }
       }
 
@@ -133,6 +134,7 @@ header {
         .bottomDisplay {
           display: flex;
           justify-content: center;
+          align-items: center;
           flex-grow: 1;
 
           // left & right side of the bottom containers
@@ -143,7 +145,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            
+
             // left side pokemon stats
             .stats {
               width: 100%;
@@ -153,11 +155,11 @@ header {
               box-shadow: 10px 10px 0px -5px #595959;
               display: flex;
               flex-direction: column;
-              text-transform: uppercase;  
+              text-transform: uppercase;
               padding: 20% 10%;
-              
+
             }
-  
+
             // pokemon image conatiner
             .pokemonSprite {
               width: 100%;
@@ -165,7 +167,7 @@ header {
               display: flex;
               justify-content: center;
               align-items: center;
-  
+
               // pokemon image sprite
               img {
                 width: 100%;
@@ -175,9 +177,9 @@ header {
           }
         }
       }
-    } // screen end 
+    } // screen end
   } // gameboy end
-} // container end 
+} // container end
 
 // lower half off the gamebox console
 .lowerHalf {
@@ -248,7 +250,7 @@ header {
     width: 110px;
     display: flex;
     flex-direction: column;
-    
+
     // right side buttons "A"
     .btnRight {
       align-self: flex-end;
@@ -293,7 +295,7 @@ header {
     align-items: center;
     padding-right: 70px;
     gap: 25px;
-    
+
     .optBtn {
       width: 40px;
       height: 10px;
@@ -335,6 +337,7 @@ header {
       border-left: 2px solid #000;
       border-radius: 5px;
       align-self: flex-end;
+      margin-bottom: 40px;
 
     }
   }

@@ -427,7 +427,7 @@ header .instructionArrows {
   background: linear-gradient(270deg, rgb(218, 213, 210) 0%, rgb(255, 255, 255) 2%, rgb(218, 213, 210) 3%, rgb(218, 213, 210) 97%, rgb(255, 255, 255) 99%, rgb(218, 213, 210) 100%);
   height: auto;
   min-height: 71.5vh;
-  width: 30vw;
+  width: 50vw;
   border-radius: 20px 20px 80px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -476,6 +476,7 @@ header .instructionArrows {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-right: 20px;
 }
 .container .gameBox .screen .battery {
   display: -webkit-box;
@@ -529,6 +530,9 @@ header .instructionArrows {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -753,6 +757,7 @@ header .instructionArrows {
   border-radius: 5px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  margin-bottom: 40px;
 }
 
 footer,
@@ -775,13 +780,26 @@ MEDIA QUERIES
 @media (max-width: 1200px) {
   .container .gameBox {
     width: 60vw;
-    min-height: 100vh;
+  }
+}
+@media (max-width: 1000px) {
+  .container .gameBox .screen .display .bottomDisplay {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container .gameBox .screen .display .bottomDisplay .leftScreen {
+    width: 80%;
+  }
+  .container .gameBox .screen .display .bottomDisplay .leftScreen .stats {
+    padding: 5%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 @media (max-width: 768px) {
-  .container .gameBox {
-    min-height: 90vh;
-  }
   .bottomSection {
     padding-top: 20px;
   }
@@ -789,7 +807,6 @@ MEDIA QUERIES
 @media (max-width: 480px) {
   .container .gameBox {
     width: 80vw;
-    min-height: 90vh;
   }
   .container .gameBox .screen .display {
     height: auto;
@@ -798,10 +815,7 @@ MEDIA QUERIES
     padding: 10% 5%;
   }
 }
-@media (max-width: 320px) {
-  .container .gameBox {
-    min-height: 80vh;
-  }
+@media (max-width: 420px) {
   .btnCircle {
     width: 40px;
     height: 40px;
