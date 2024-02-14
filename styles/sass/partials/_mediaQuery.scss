@@ -1,21 +1,31 @@
 /**************
 MEDIA QUERIES
 **************/
-  
-  
+
+
 @media (max-width: 1200px) {
 
   .container .gameBox {
     width: 60vw;
-    min-height: 100vh;
+  }
+}
+
+@media(max-width: 1000px) {
+  .container .gameBox .screen .display .bottomDisplay {
+      flex-direction: column;
+    }
+
+  .container .gameBox .screen .display .bottomDisplay .leftScreen {
+    width: 80%;
+  }
+
+  .container .gameBox .screen .display .bottomDisplay .leftScreen .stats{
+    padding: 5%;
+    align-items: center;
   }
 }
 
 @media (max-width: 768px) {
-
-  .container .gameBox {
-      min-height: 90vh;
-    }
 
   .bottomSection {
     padding-top: 20px;
@@ -26,68 +36,64 @@ MEDIA QUERIES
 
   .container .gameBox {
       width: 80vw;
-      min-height: 90vh;
     }
 
   .container .gameBox .screen .display {
     height: auto;
   }
-  
+
     .container .gameBox .screen .display .bottomDisplay .leftScreen .stats {
     padding: 10% 5%;
-  }  
+  }
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
 
-  .container .gameBox {
-      min-height: 80vh;
-    }
   .btnCircle {
       width: 40px;
       height: 40px;
     }
-  
+
     .btnSquare {
       width: 30px;
       height: 30px;
     }
-  
+
     .lowerHalf {
       .dPad {
         width: 90px;
         height: 90px;
-  
+
         .btnMiddle .btnCicMid {
           width: 25px;
           height: 25px;
         }
       }
-  
+
       .buttons {
         width: 80px;
         margin-right: 20px;
-  
+
         .btnLeft .btnLabel,
         .btnRight .btnLabel {
           left: 40px;
         }
       }
     }
-  
+
     .bottomSection {
       .optionButtons {
         height: 10%;
         padding-top: 50px;
         justify-content: flex-start;
-  
+
         .optBtn {
           width: 30px;
           height: 5px;
         }
       }
-  
+
       .speaker {
         gap: 7px;
         align-self: center;
@@ -95,7 +101,7 @@ MEDIA QUERIES
 
         .speakerHole {
           height: 70px;
-          
+
         }
       }
     }
